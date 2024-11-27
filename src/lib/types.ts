@@ -1,5 +1,5 @@
 export interface Problem {
-    id: number;
+    question_id: string;
     title: string;
     difficulty: 'Easy' | 'Medium' | 'Hard';
     description: string;
@@ -9,6 +9,7 @@ export interface Problem {
         explanation?: string;
     }[];
     constraints: string[];
+    hints: string[];
 }
 
 export interface SubmissionResult {
@@ -18,4 +19,26 @@ export interface SubmissionResult {
     testCases?: string;
     message?: string;
     details?: string;
+}
+
+export interface User {
+    id: string;
+    email: string;
+    username: string;
+}
+
+export interface AuthResponse {
+    user: User;
+    token: string;
+}
+
+export interface LoginData {
+    email: string;
+    password: string;
+}
+
+export interface SignupData {
+    username: string;
+    email: string;
+    password: string;
 }

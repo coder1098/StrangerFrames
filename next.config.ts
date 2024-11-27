@@ -32,4 +32,15 @@ const nextConfig: NextConfig = {
   }
 };
 
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://pending-meals-wool-deputy.trycloudflare.com/api/:path*'
+      }
+    ]
+  }
+}
+
 export default nextConfig;
